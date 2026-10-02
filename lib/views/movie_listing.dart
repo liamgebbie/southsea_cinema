@@ -15,7 +15,8 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: const SizedBox.shrink(),
+      body: Text('GoodFellas (1990) (8.7)')
     );
   }
 }
+
