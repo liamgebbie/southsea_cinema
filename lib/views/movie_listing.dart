@@ -15,7 +15,12 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: Container(color: Colors.lightBlueAccent, child: Text('GoodFellas (1990) (18)'))
+      body: Container(color: Colors.lightBlueAccent, child: Column(
+        children: [
+          Text('GoodFellas (1990) (18)'),
+          Text('The story of Henry Hill and his life in the mafia, covering his relationship with his wife Karen and his mob partners Jimmy Conway and Tommy DeVito.')
+        ],
+      ))
     );
   }
 }
