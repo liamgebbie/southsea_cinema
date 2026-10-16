@@ -25,6 +25,7 @@ class _MovieListingState extends State<MovieListing> {
         children: [
           Text('GoodFellas (1990) (18)'),
           Text('The story of Henry Hill and his life in the mafia, covering his relationship with his wife Karen and his mob partners Jimmy Conway and Tommy DeVito.'),
+          Text('Runtime: 145 mins'),
           DropdownMenu<int>(
             initialSelection: 1,
             onSelected: (int? value) {
