@@ -43,8 +43,12 @@ class _MovieListingState extends State<MovieListing> {
               DropdownMenuEntry(value: 5, label: '5 tickets')
             ],
           ),
-        ],
-      ))
+          ElevatedButton(onPressed: () {
+            print("Added to order");
+          }, 
+          child: Text("Add to order"),
+          ),
+        ]))
     );
   }
 }
