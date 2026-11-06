@@ -10,7 +10,7 @@ class MovieRepository {
         ageRating: '18',
         screeningTime: 'Fri 19:30',
         price: 9.5,
-        imagePath: 'assets/images/goodfellas.jpg',
+        imagePath: 'assets/images/goodfellas.png',
       ),
       Movie(
         id: 'scarface',
