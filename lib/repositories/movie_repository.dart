@@ -15,12 +15,13 @@ class MovieRepository {
       Movie(
         id: 'scarface',
         title: 'Scarface',
-        synopsis: 'A Cuban refugee rises to become a ruthless drug lord in 1980s Miami.',
+        synopsis:
+            'A Cuban refugee rises to become a ruthless drug lord in 1980s Miami.',
         ageRating: '18',
         screeningTime: 'Sat 21:00',
         price: 8.0,
         imagePath: 'assets/images/scarface.png',
-        ),
+      ),
     ];
   }
 
