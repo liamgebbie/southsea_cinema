@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
+import 'package:southsea_cinema/models/basket_item.dart';
 import 'package:southsea_cinema/models/movie.dart';
+import 'package:southsea_cinema/repositories/basket_repository.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/widgets/primary_button.dart';
 
 class MovieListing extends StatefulWidget {
   final Movie movie;
@@ -19,12 +22,7 @@ class _MovieListingState extends State<MovieListing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(appTitle, style: cinemaHeaderStyle),
-        backgroundColor: cinemaSurface,
-        iconTheme: const IconThemeData(color: cinemaBrand),
-        elevation: 0,
-      ),
+      appBar: AppBar(title: const Text(appTitle)),
       drawer: const NavDrawer(),
       body: Container(
         color: cinemaBrand,
@@ -52,13 +50,16 @@ class _MovieListingState extends State<MovieListing> {
               ],
             ),
             Text('Tickets selected: $_ticketQuantity'),
-            ElevatedButton(
+            PrimaryButton(
+              label: 'Add to order',
               onPressed: () {
+                BasketRepository.instance.addItem(
+                  BasketItem(movie: widget.movie, quantity: _ticketQuantity),
+                );
                 setState(() {
                   _bookingMessage = 'Added $_ticketQuantity to order';
                 });
               },
-              child: const Text('Add to order'),
             ),
             Text(_bookingMessage),
           ],
