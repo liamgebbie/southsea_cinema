@@ -1,7 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   group('MovieRepository', () {
     final repository = MovieRepository();
 
@@ -20,6 +23,17 @@ void main() {
 
     test('getMovieById returns null for a missing id', () {
       expect(repository.getMovieById('does-not-exist'), isNull);
+    });
+
+    test('loadMoviesFromAsset reads every film from the JSON file', () async {
+      final MovieRepository jsonRepository = MovieRepository();
+      final List<Movie> movies = await jsonRepository.loadMoviesFromAsset();
+
+      expect(movies.length, 2);
+      expect(movies[0].id, 'goodfellas');
+      expect(movies[1].id, 'scarface');
+      expect(movies[1].price, 8.0);
+      expect(jsonRepository.getMovies(), movies);
     });
   });
 }

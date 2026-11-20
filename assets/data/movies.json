@@ -1,0 +1,20 @@
+[
+  {
+    "id": "goodfellas",
+    "title": "GoodFellas",
+    "synopsis": "The story of Henry Hill and his life in the mafia.",
+    "ageRating": "18",
+    "screeningTime": "Fri 19:30",
+    "price": 9.5,
+    "imagePath": "assets/images/goodfellas.png"
+  },
+  {
+    "id": "scarface",
+    "title": "Scarface",
+    "synopsis": "A Cuban refugee rises to become a ruthless drug lord in 1980s Miami.",
+    "ageRating": "18",
+    "screeningTime": "Sat 21:00",
+    "price": 8,
+    "imagePath": "assets/images/scarface.png"
+  }
+]
